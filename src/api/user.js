@@ -2,6 +2,7 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
+    // mock 路径：/vue-admin-template/user/login
     url: '/vue-admin-template/user/login',
     method: 'post',
     data

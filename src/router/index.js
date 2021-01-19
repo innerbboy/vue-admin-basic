@@ -51,7 +51,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
   },
 
@@ -59,9 +59,9 @@ export const constantRoutes = [
     path: '/example',
     component: Layout,
     redirect: '/example/table',
-    name: 'Example',
+    name: '用户管理',
     meta: {
-      title: 'Example',
+      title: '用户管理',
       icon: 'example',
       roles: ['admin']
     },
@@ -90,10 +90,10 @@ export const constantRoutes = [
     children: [
       {
         path: 'index',
-        name: 'Form',
+        name: '角色管理',
         component: () => import('@/views/form/index'),
         meta: {
-          title: 'Form',
+          title: '角色管理',
           icon: 'form',
           roles: ['editor']
         }
@@ -113,22 +113,22 @@ export const asyncRoutes = [
     redirect: '/nested/menu1',
     name: 'Nested',
     meta: {
-      roles: ['admin1', 'editor1'],
-      title: 'Nested',
-      icon: 'nested'
+      title: '设备管理',
+      icon: 'nested',
+      roles: ['editor']
     },
     children: [
       {
         path: 'menu1',
         component: () => import('@/views/nested/menu1/index'), // Parent router-view
         name: 'Menu1',
-        meta: { title: 'Menu1' },
+        meta: { title: 'Menu1'},
         children: [
           {
             path: 'menu1-1',
             component: () => import('@/views/nested/menu1/menu1-1'),
             name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
+            meta: { title: 'Menu1-1', roles: ['editor'] }
           },
           {
             path: 'menu1-2',
@@ -165,17 +165,6 @@ export const asyncRoutes = [
       }
     ]
   },
-
-  // {
-  //   path: 'external-link',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-  //       meta: { title: 'External Link', icon: 'link' }
-  //     }
-  //   ]
-  // },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }

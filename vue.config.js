@@ -37,6 +37,16 @@ module.exports = {
       errors: true
     },
     before: require('./mock/mock-server.js')
+    // modify by daiysh 20200222 16:45
+    // proxy: {
+    //   '/vue-admin-template': {
+    //     target: 'http://localhost:8089',
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/vue-admin-template': ''
+    //     }
+    //   }
+    // }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
